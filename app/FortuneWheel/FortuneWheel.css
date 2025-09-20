@@ -1,0 +1,360 @@
+.fortune-wheel-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a14 0%, #000000 100%);
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
+
+.fortune-wheel-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.fortune-wheel-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00ffcc, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
+  margin-bottom: 16px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.fortune-wheel-subtitle {
+  font-size: 20px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 32px;
+  animation: fadeIn 0.8s ease-in 0.2s;
+}
+
+.fortune-wheel-card {
+  background: rgba(10, 10, 20, 0.95);
+  border: 2px solid #00ffcc;
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 255, 204, 0.25), 0 0 24px rgba(0, 255, 204, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 32px;
+  margin-bottom: 32px;
+  animation: glow 2s infinite alternate;
+}
+
+.fortune-wheel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.fortune-wheel-picker {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00ffcc, #ff00ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.7);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.fortune-wheel-picker.spinning {
+  animation: pickerSpin 0.1s linear infinite;
+}
+
+@keyframes pickerSpin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.fortune-wheel-ticket-list {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.fortune-wheel-ticket-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00ffcc;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+  margin-bottom: 10px;
+}
+
+.fortune-wheel-ticket-ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(10, 10, 20, 0.8);
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.fortune-wheel-ticket-item {
+  font-size: 14px;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+.fortune-wheel-ticket-item:last-child {
+  border-bottom: none;
+}
+
+.fortune-wheel-winner {
+  font-size: 24px;
+  font-weight: 600;
+  color: #00ffcc;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+  margin-top: 16px;
+}
+
+.winner-address {
+  color: #ff00ff;
+  font-weight: 700;
+}
+/* WebKit-based browsers (Chrome, Safari, Edge) */
+.fortune-wheel-ticket-ul::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.fortune-wheel-ticket-ul::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+  border-radius: 4px; /* Rounded corners for the track */
+}
+
+.fortune-wheel-ticket-ul::-webkit-scrollbar-thumb {
+  background: #4b8e56; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.fortune-wheel-ticket-ul::-webkit-scrollbar-thumb:hover {
+  background: #6b3b67; /* Darker color on hover */
+}
+
+.fortune-wheel-ticket-ul {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: #704b8e #f1f1f1; /* Thumb color and track color */
+}
+.fortune-wheel-spin-button {
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #00ffcc, #ff00ff);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fortune-wheel-spin-button:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  transform: scale(1.05);
+}
+
+.fortune-wheel-spin-button:disabled {
+  background: linear-gradient(90deg, #666, #999);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.fortune-wheel-no-data {
+  font-size: 18px;
+  color: #ff4d4d;
+  text-shadow: 0 0 4px rgba(255, 77, 77, 0.5);
+}
+
+.fortune-wheel-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.fortune-wheel-modal {
+  background: rgba(10, 10, 20, 0.95);
+  border: 2px solid #00ffcc;
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 255, 204, 0.25), 0 0 24px rgba(0, 255, 204, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 32px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: slideIn 0.5s ease-out;
+}
+
+.fortune-wheel-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fortune-wheel-modal-close:hover {
+  transform: scale(1.2);
+}
+
+.fortune-wheel-modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.fortune-wheel-modal-text {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.fortune-wheel-modal-message {
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.fortune-wheel-modal-button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #00ffcc, #ff00ff);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fortune-wheel-modal-button:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  transform: scale(1.05);
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.fortune-wheel-total-tickets {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 12px 48px rgba(0, 255, 204, 0.25);
+  }
+  100% {
+    box-shadow: 0 12px 48px rgba(0, 255, 204, 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .fortune-wheel-title {
+    font-size: 36px;
+  }
+  .fortune-wheel-subtitle {
+    font-size: 16px;
+  }
+  .fortune-wheel-card {
+    padding: 20px;
+  }
+  .fortune-wheel-picker {
+    width: 250px;
+    height: 250px;
+    font-size: 20px;
+  }
+  .fortune-wheel-ticket-list {
+    max-width: 300px;
+  }
+  .fortune-wheel-spin-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fortune-wheel-title {
+    font-size: 28px;
+  }
+  .fortune-wheel-subtitle {
+    font-size: 14px;
+  }
+  .fortune-wheel-picker {
+    width: 200px;
+    height: 200px;
+    font-size: 16px;
+  }
+  .fortune-wheel-ticket-list {
+    max-width: 250px;
+  }
+}

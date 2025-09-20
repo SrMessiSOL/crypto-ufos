@@ -1,0 +1,141 @@
+/* RafflePage.css */
+
+/* Centering the loading container */
+.flex.items-center.justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Minimum height for the loading container */
+.min-h-\[200px\] {
+  min-height: 200px;
+}
+.wallet-adapter-modal {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  bottom: auto !important;
+  right: auto !important;
+  height: 75% !important; /* Keep the height if desired */
+  max-width: 500px !important;
+  background: rgba(10, 10, 20, 0.98) !important;
+  border: 1px solid #00ffcc !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 204, 0.3) !important;
+  overflow: auto !important; /* Change to auto to allow scrolling if content overflows */
+  backdrop-filter: blur(20px) !important;
+  z-index: 1001 !important;
+  display: fixed !important;
+  justify-content: center !important; /* Center vertically */
+  align-items: center !important; /* Center horizontally */
+}
+/* Loading Progress Bar */
+.cypherpunk-loading-progress {
+  background: #2a2a2a;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+}
+.cypherpunk-loading-progress-bar {
+  background: #00ffaa;
+  height: 100%;
+  animation: progress 2s infinite linear;
+}
+@keyframes progress {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+/* Fade In Animation for data */
+@keyframes centimove {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-centimove {
+  animation: centimove 0.5s ease-in;
+}
+
+/* Border Style */
+.cypherpunk-border {
+  border: 1px solid #00ffcc;
+}
+
+/* Glow Hover Effect */
+.glow-hover:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+/* Icon Glow Effect */
+.cypherpunk-icon-glow {
+  filter: drop-shadow(0 0 5px rgba(0, 255, 204, 0.5));
+}
+
+/* Button Styles */
+.cypherpunk-button {
+  transition: all 0.3s ease;
+}
+.cypherpunk-button-purple {
+  background: linear-gradient(135deg, #6a00f4, #a100f2);
+  color: white;
+}
+.cypherpunk-button-purple:hover {
+  background: linear-gradient(135deg, #7b00ff, #b200ff);
+}
+.cypherpunk-button-green {
+  background: linear-gradient(135deg, #00ffaa, #00cc88);
+  color: black;
+}
+.cypherpunk-button-green:hover {
+  background: linear-gradient(135deg, #00ffcc, #00e6a3);
+}
+.cypherpunk-button-yellow {
+  background: linear-gradient(135deg, #f4d03f, #f1c40f);
+  color: black;
+}
+.cypherpunk-button-yellow:hover {
+  background: linear-gradient(135deg, #f7e05e, #f4d03f);
+}
+.cypherpunk-button-blue {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+.cypherpunk-button-blue:hover {
+  background: linear-gradient(135deg, #1a88ff, #0066cc);
+}
+.cypherpunk-button-red {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+.cypherpunk-button-red:hover {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+/* Fire Effect */
+@keyframes flicker {
+  0% { text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 20px #ff4500, 0 0 40px #ff4500, 0 0 60px #ff4500, 0 0 80px #ff4500; }
+  50% { text-shadow: 0 0 2px #fff, 0 0 8px #fff, 0 0 15px #ff8c00, 0 0 30px #ff8c00, 0 0 50px #ff8c00, 0 0 70px #ff8c00; }
+  100% { text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 20px #ff4500, 0 0 40px #ff4500, 0 0 60px #ff4500, 0 0 80px #ff4500; }
+}
+.fire-effect {
+  background: linear-gradient(90deg, #ff4500, #ff8c00, #ff4500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: flicker 1.5s infinite alternate;
+  font-weight: bold;
+}
+
+/* Text Styles */
+.cypherpunk-loading-text {
+  color: #00ffaa;
+  font-family: 'Orbitron', sans-serif;
+}
+.cypherpunk-time {
+  color: #00ffaa;
+  font-family: 'Orbitron', sans-serif;
+}

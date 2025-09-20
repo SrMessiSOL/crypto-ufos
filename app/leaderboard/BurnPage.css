@@ -1,0 +1,724 @@
+/* BurnPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+:root {
+  --neon-blue: #00ffcc;
+  --neon-pink: #ff00aa;
+  --neon-purple: #9333ea;
+  --dark-bg: #0a0a0a;
+  --panel-bg: rgba(26, 26, 26, 0.95);
+  --glow-blue: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+  --glow-pink: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+  --glow-purple: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+}
+
+/* Override BettingGame.css conflicts */
+body {
+  background: linear-gradient(to bottom, var(--dark-bg), #000000);
+  color: var(--neon-blue);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.min-h-screen {
+  width: 100%;
+  display: block; /* Override flex from BettingGame.css */
+}
+
+/* Main container */
+.max-w-\[2000px\] {
+  max-width: 2000px;
+}
+
+/* Cypherpunk border */
+.cypherpunk-border {
+  border: 1px solid var(--neon-blue);
+  border-radius: 12px;
+  box-shadow: var(--glow-blue);
+}
+
+/* Glow hover effect */
+.glow-hover:hover {
+  box-shadow: var(--glow-blue);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Progress bar */
+.cypherpunk-progress {
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cypherpunk-progress-bar {
+  background: var(--neon-blue);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Loading progress bar */
+.cypherpunk-loading-progress {
+  background: #2a2a2a;
+  border: 1px solid #00ffaa;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.cypherpunk-loading-progress-bar {
+  background: linear-gradient(90deg, #ff00aa, #00ffaa);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Fade-in Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Styling */
+.cypherpunk-modal {
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.98), rgba(26, 26, 26, 0.95));
+  border: 1px solid var(--neon-blue);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 204, 0.3);
+  backdrop-filter: blur(10px);
+  margin: auto;
+  padding: 1.5rem;
+  overflow-y: auto;
+  position: relative;
+  color: #ffffff;
+}
+
+/* Modal Overlay */
+/* Modal Overlay */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Loading modal overlay */
+.cypherpunk-loading-container {
+  background: linear-gradient(to bottom, rgba(17, 24, 39, 0.8), rgba(0, 0, 0, 0.8));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Center the loading content */
+.cypherpunk-loading-container .text-center {
+  background: rgba(10, 10, 20, 0.95);
+  border: 1px solid #00ffcc;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 204, 0.3);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+/* Loading text */
+.cypherpunk-loading-text {
+  color: #00ffcc;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+/* Spinner */
+.cypherpunk-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid transparent;
+  border-top-color: #00ffcc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Table styling */
+table.w-full.table-fixed {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.w-full.table-fixed th,
+table.w-full.table-fixed td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Center table headers */
+table.w-full.table-fixed th.text-center {
+  text-align: center;
+}
+
+/* Center table cell content */
+table.w-full.table-fixed td.text-center {
+  text-align: center;
+}
+
+table.w-full.table-fixed td .flex.justify-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive padding and margins */
+.p-1 { padding: 0.25rem; }
+.md\:p-2 { padding: 0.5rem; }
+.p-3 { padding: 0.75rem; }
+.md\:p-4 { padding: 1rem; }
+.p-4 { padding: 1rem; }
+.md\:p-6 { padding: 1.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.gap-2 { gap: 0.5rem; }
+.md\:gap-3 { gap: 0.75rem; }
+.gap-3 { gap: 0.75rem; }
+.md\:gap-4 { gap: 1rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+
+/* Override BettingGame.css for specific elements */
+.bg-gray-800\/80,
+.bg-gray-800\/50,
+.bg-gray-900\/95,
+.bg-gray-900\/70 {
+  background: var(--panel-bg) !important;
+}
+
+/* Wallet controls */
+.cyberpunk-wallet-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cyberpunk-wallet-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.cyberpunk-button-wallet {
+  display: flex;
+  justify-content: center;
+}
+
+/* Wallet button styles */
+.cypherpunk-button {
+  background: transparent;
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.cypherpunk-button:hover:not(:disabled) {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  box-shadow: var(--glow-blue);
+  transform: translateY(-2px);
+}
+
+.cypherpunk-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cypherpunk-button-purple {
+  border-color: var(--neon-purple);
+  color: var(--neon-purple);
+}
+
+.cypherpunk-button-purple:hover:not(:disabled) {
+  background: var(--neon-purple);
+  box-shadow: var(--glow-purple);
+  color: var(--dark-bg);
+}
+
+.cypherpunk-button-blue {
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+}
+
+.cypherpunk-button-blue:hover:not(:disabled) {
+  background: var(--neon-blue);
+  box-shadow: var(--glow-blue);
+  color: var(--dark-bg);
+}
+
+.cypherpunk-button-green {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.cypherpunk-button-green:hover:not(:disabled) {
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+  color: var(--dark-bg);
+}
+
+.cypherpunk-button-red {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.cypherpunk-button-red:hover:not(:disabled) {
+  background: #ff4d4d;
+  color: #ffffff;
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+/* Wallet adapter modal styles */
+.wallet-adapter-modal {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  bottom: auto !important;
+  right: auto !important;
+  height: 75% !important; /* Keep the height if desired */
+  max-width: 420px !important;
+  background: rgba(10, 10, 20, 0.98) !important;
+  border: 1px solid #00ffcc !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 255, 204, 0.3) !important;
+  overflow: auto !important; /* Change to auto to allow scrolling if content overflows */
+  backdrop-filter: blur(20px) !important;
+  z-index: 1001 !important;
+  display: fixed !important;
+  justify-content: center !important; /* Center vertically */
+  align-items: center !important; /* Center horizontally */
+}
+
+
+.wallet-adapter-modal-list {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+  padding: 8px 0 !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 300px !important;
+}
+
+.wallet-adapter-modal-title {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #00ffcc !important;
+  text-align: center !important;
+  margin-bottom: 24px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.wallet-adapter-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #00ffcc !important;
+  background: linear-gradient(135deg, rgba(106, 0, 244, 0.1), rgba(161, 0, 242, 0.1)) !important;
+  border: 1px solid #00ffcc !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 255, 204, 0.15) !important;
+  cursor: pointer !important;
+}
+
+.wallet-adapter-dropdown-item:hover {
+  background: linear-gradient(135deg, rgba(106, 0, 244, 0.2), rgba(161, 0, 242, 0.2)) !important;
+  transform: scale(1.02) !important;
+  box-shadow: 0 4px 16px rgba(0, 255, 204, 0.3), 0 0 0 1px rgba(0, 255, 204, 0.5) !important;
+}
+
+.wallet-adapter-modal-button {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+  padding: 16px 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(106, 0, 244, 0.1), rgba(161, 0, 242, 0.1));
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 255, 204, 0.15);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  backdrop-filter: blur(10px);
+}
+
+.wallet-adapter-modal-button:hover {
+  background: linear-gradient(135deg, rgba(106, 0, 244, 0.2), rgba(161, 0, 242, 0.2));
+  box-shadow: 0 4px 16px rgba(0, 255, 204, 0.3), 0 0 0 1px rgba(0, 255, 204, 0.5);
+  transform: translateY(-1px);
+}
+
+.wallet-adapter-modal-button img {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.wallet-adapter-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 2px solid #ff4d4d;
+  border-radius: 50%;
+  color: #ff4d4d;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wallet-adapter-modal-close:hover {
+  background: #ff4d4d;
+  color: #ffffff;
+  box-shadow: 0 0 10px #ff4d4d;
+  transform: scale(1.1);
+}
+
+/* Connected Wallet Button Icon Styling */
+.wallet-adapter-button .wallet-adapter-button-start-icon img {
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: cover !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Target the connected wallet button and its content */
+.wallet-adapter-button.wallet-adapter-button-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 16px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  width: 150px;
+  height: auto;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(135deg, rgba(106, 0, 244, 0.1), rgba(161, 0, 242, 0.1));
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 255, 204, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wallet-adapter-button.wallet-adapter-button-trigger:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(106, 0, 244, 0.2), rgba(161, 0, 242, 0.2));
+  box-shadow: 0 4px 16px rgba(0, 255, 204, 0.3), 0 0 0 1px rgba(0, 255, 204, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar for Modals */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-blue) #1f2937;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--neon-blue);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: #1f2937;
+}
+
+/* Icon glow */
+.cypherpunk-icon-glow {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* Podium Card Styling */
+.podium-card {
+  transition: all 0.3s ease;
+}
+
+.podium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow-blue);
+}
+
+/* Skill Card Styling */
+.skill-card {
+  background: rgba(42, 42, 42, 0.5);
+  border: 1px solid var(--neon-blue);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  background: rgba(42, 42, 42, 0.7);
+  box-shadow: var(--glow-blue);
+}
+@media (max-width: 480px) {
+  .round-info-grid-title {
+    font-size: 24px;
+  }
+
+  .round-info-grid-time {
+    font-size: 20px;
+  }
+  .round-info-grid-item {
+    padding: 12px;
+  }
+  .round-info-grid-label {
+    font-size: 12px;
+  }
+  .round-info-grid-value {
+    font-size: 16px;
+  }
+}
+/* Responsive Grid Adjustments */
+@media (max-width: 640px) {
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .cypherpunk-modal {
+    padding: 1.5rem;
+  }
+
+  .podium-card img {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .skill-card img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .text-base {
+    font-size: 0.875rem;
+  }
+
+  .cypherpunk-progress {
+    width: 12rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .cypherpunk-modal {
+    width: 90% !important;
+    padding: 1.5rem !important;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .podium-card img {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  .skill-card img {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+  .cypherpunk-modal {
+    width: 90% !important;
+    padding: 2rem !important;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .podium-card img {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .skill-card img {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+}
+
+/* Ensure close button is always visible */
+.cypherpunk-button-red {
+  position: fixed !important;
+  top: 0.5rem !important;
+  right: 0.5rem !important;
+  z-index: 10 !important;
+}
+
+/* Center modal content */
+.cypherpunk-modal > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Focus Styles for Accessibility */
+button:focus, input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 255, 204, 0.5);
+}
+
+/* Font Overrides */
+.font-orbitron {
+  font-family: var(--font-orbitron);
+}
+
+/* Enhanced Button Styling */
+.cypherpunk-button {
+  font-family: var(--font-orbitron);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.cypherpunk-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-blue);
+}
+
+.cypherpunk-button-red {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.cypherpunk-button-red:hover:not(:disabled) {
+  background: #ff4d4d;
+  color: #ffffff;
+  box-shadow: 0 0 10px #ff4d4d;
+}
+
+/* Progress Bar Styling */
+.cypherpunk-progress {
+  background: #2a2a2a;
+  border: 1px solid var(--neon-blue);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cypherpunk-progress-bar {
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+/* Loading Container */
+.cypherpunk-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+
+/* Spinner */
+.cypherpunk-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid transparent;
+  border-top-color: var(--neon-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
