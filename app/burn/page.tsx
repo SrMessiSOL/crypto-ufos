@@ -26,16 +26,6 @@ import { PhantomWalletAdapter, SolflareWalletAdapter } from "@solana/wallet-adap
 import "./BurnPage.css"; // Assuming you have a CSS file for styling
 import "@solana/wallet-adapter-react-ui/styles.css"; // Required for WalletModalProvider
 
-// Firebase configuration
-const FIREBASE_CONFIG = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-};
 
 // Game assets
 const GAME_ASSETS = {
@@ -64,7 +54,7 @@ const SPECIAL_NFT_NUMBERS = [
   4074, 1988, 558, 4016, 1409, 4012, 3666, 238, 3068, 831, 56, 2323, 3674, 2042, 1224, 1581, 4086, 1192,
   51, 960, 718, 3891, 4141, 814, 497, 1804, 199,
 ];
-const SOLANA_RPC = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
+const SOLANA_RPC = "https://mainnet.helius-rpc.com/";
 
 // Wallet adapters
 const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
@@ -1091,5 +1081,6 @@ const BurnPage = () => {
     </ConnectionProvider>
   );
 };
+
 
 export default BurnPage;
