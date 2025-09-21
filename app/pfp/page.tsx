@@ -27,21 +27,12 @@ import {
 import "./BurnPage.css"; // Import GMGenerator's CSS
 import "@solana/wallet-adapter-react-ui/styles.css"; // Required for WalletModalProvider
 
-// Firebase configuration
-const FIREBASE_CONFIG = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-}
+
 
 const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
-const NETWORK = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
-const API_URL = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
-const COLLECTION_ADDRESS = "53UVubjHQpC4RmUnDGU1PV3f2bYFk6GcWb3SgtYFMHTb";
+const NETWORK = "https://mainnet.helius-rpc.com/?api-key";
+const API_URL = "https://mainnet.helius-rpc.com/?api-key";
+const COLLECTION_ADDRESS = "";
 // Dynamically import WalletConnect to avoid SSR
 const MODAL_DEBOUNCE_MS = 100;
 
@@ -837,4 +828,5 @@ export default function ProfilePic() {
       </WalletProvider>
     </ConnectionProvider>
   );
+
 }
