@@ -60,18 +60,6 @@ const professionIcons: { [key: string]: LucideIcon } = {
 };
 
 
-// Firebase configuration from environment variables
-const FIREBASE_CONFIG = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-}
-
-
 
 // Game asset paths
 const GAME_ASSETS = {
@@ -243,11 +231,11 @@ const resources: Resource[] = [
 ];
 
 // Add these constants at the top of the file, after the GAME_ASSETS definition
-const API_URL = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db"
-const COLLECTION_ADDRESS = "53UVubjHQpC4RmUnDGU1PV3f2bYFk6GcWb3SgtYFMHTb"
-const PROGRAM_ID = new PublicKey("CzQLNvYoi8E9ymB6LPC9M9EX9H1hRavvFMAguRqSeRmb"); // Your program ID
-const NETWORK = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db"; // Use mainnet-beta for production
-const INTERSTELLAR_MARKETPLACE_URL = "https://www.cryptoufos.com/market";
+const API_URL = "https://mainnet.helius-rpc.com/APIKEY // Use your apikey
+const COLLECTION_ADDRESS = "" Your collection address
+const PROGRAM_ID = new PublicKey(""); // Your program ID
+const NETWORK = "https://mainnet.helius-rpc.com/APIKEY // Use your apikey
+const INTERSTELLAR_MARKETPLACE_URL = "";
 
 
 // Inside CryptoUFOsGame component, add this state
@@ -8689,5 +8677,6 @@ const WrappedCryptoUFOsGame = () => {
     </ConnectionProvider>
   );
 };
+
 
 export default WrappedCryptoUFOsGame;
