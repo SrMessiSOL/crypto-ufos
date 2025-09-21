@@ -10,8 +10,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Constants for NFT fetching
-const API_URL = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
-const COLLECTION_ADDRESS = "53UVubjHQpC4RmUnDGU1PV3f2bYFk6GcWb3SgtYFMHTb";
+const API_URL = "https://mainnet.helius-rpc.com/";
+const COLLECTION_ADDRESS = "";
 
 // Interfaces
 interface HeliusAsset {
@@ -354,4 +354,5 @@ async function fetchAllNFTs(): Promise<NFT[]> {
       <SpeedInsights />
     </div>
   );
+
 }
