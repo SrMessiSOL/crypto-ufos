@@ -34,16 +34,6 @@ import "./BurnPage.css"; // Assuming you have a CSS file for styling
 import "@solana/wallet-adapter-react-ui/styles.css"; // Required for WalletModalProvider
 
 
-// Firebase configuration in environment variables
-const FIREBASE_CONFIG = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-};
 
 // Game asset paths
 const GAME_ASSETS = {
@@ -75,9 +65,9 @@ const GAME_ASSETS = {
 };
 
 // Constants for NFT fetching
-const API_URL = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
-const COLLECTION_ADDRESS = "53UVubjHQpC4RmUnDGU1PV3f2bYFk6GcWb3SgtYFMHTb";
-const SOLANA_RPC = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
+const API_URL = "https://mainnet.helius-rpc.com/";
+const COLLECTION_ADDRESS = "";
+const SOLANA_RPC = "https://mainnet.helius-rpc.com/";
 
 // Constants for proposal duration
 const ONE_WEEK_IN_SECONDS = 7 * 24 * 60 * 60; // 7 days in seconds
@@ -1381,4 +1371,5 @@ export default function DAOPage() {
       </WalletProvider>
     </ConnectionProvider>
   );
+
 }
