@@ -36,19 +36,10 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css"; // Required for WalletModalProvider
 import "./RafflePage.css"; // New CSS file for raffle-specific styles
 
-// Firebase configuration
-const FIREBASE_CONFIG = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-};
+
 
 // Solana network configuration
-const NETWORK = "https://mainnet.helius-rpc.com/?api-key=3d0ad7ca-7869-4a97-9d3e-a57131ae89db";
+const NETWORK = "https://mainnet.helius-rpc.com/?api-key";
 
 // Wallet adapters
 const wallets = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
@@ -1048,4 +1039,5 @@ export default function RafflePage() {
       </WalletProvider>
     </ConnectionProvider>
   );
+
 }
